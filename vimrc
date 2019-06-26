@@ -10,15 +10,30 @@ set cindent
 set mouse=a
 set autowrite
 set autoread
+set clipboard=unnamedplus
+set nowrap
+set hlsearch
+set incsearch
 
-autocmd FileType cpp map <F8> :!g++ -std=c++17 -DLOCAL_DEF -g % -o %<<CR>
-autocmd FileType cpp map <F5> :!./%<<CR>
+syntax on
+colorscheme badwolf
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+map <F3> :noh <CR>
+
+autocmd FileType go map <F8> :!go build % <CR>
+autocmd FileType go map <F5> :!./%< <CR>
+autocmd FileType python map <F5> :!python3 % <CR>
+autocmd FileType cpp map <F8> :!clear<CR> :!g++ -std=c++17 -Wall -Wno-unused-result -DLOCAL_DEF -g % -o %< <CR>
+autocmd FileType cpp map <F5> :!./%< <CR>
+
+filetype off                 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sjl/badwolf'
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plugin 'vim-airline/vim-airline'
+Plugin 'SirVer/ultisnips'
+
+call vundle#end()            
+filetype plugin indent on    

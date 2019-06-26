@@ -1,0 +1,63 @@
+snippet freopen
+assert(freopen("input.txt", "r", stdin));
+freopen("output.txt", "w", stdout);
+$1
+endsnippet
+
+
+
+
+
+
+
+
+
+
+snippet maxim
+
+template<class c> inline bool amax(c a, c b) {
+	return a < b ? a = b, true : false;
+}
+
+template<class c> inline bool amin(c a, c b) {
+	return a > b ? a = b, true : false;
+}
+
+endsnippet
+
+
+
+
+
+
+
+
+snippet mod
+
+const int _MD = 1000000007;
+
+inline void add(int& _A, int _B) {
+	_A += _B;
+	if (_A >= _MD) {
+		_A -= _MD		
+	}
+}
+
+inline void sub(int& _A, int _B) {
+	_A -= _B;
+	if (_A < 0) {
+		_A += _MD;
+	}
+}
+
+inline int mult(int _A, int _B) {
+	return (_A  * 1LL * _B) % _MD;
+}
+
+endsnippet
+
+
+
+
+
+
