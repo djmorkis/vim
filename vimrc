@@ -20,10 +20,9 @@ colorscheme badwolf
 
 map <F3> :noh <CR>
 
-autocmd FileType go map <F8> :!go build % <CR>
 autocmd FileType go map <F5> :!./%< <CR>
-autocmd FileType python map <F5> :!python3 % <CR>
-autocmd FileType cpp map <F8> :!clear<CR> :!g++ -std=c++17 -Wall -Wno-unused-result -DLOCAL_DEF -g % -o %< <CR>
+autocmd FileType python map <F5> :!clear<CR>  :!python3 % <CR>
+autocmd FileType cpp map <F8> :!clear<CR> :!g++ -std=c++17 -fsanitize=address -fsanitize=undefined  -Wall -Wextra -O2 -pedantic -Wshadow -Wformat=2 -Wconversion -DLOCAL -g % -o %< <CR>
 autocmd FileType cpp map <F5> :!./%< <CR>
 
 filetype off                 
