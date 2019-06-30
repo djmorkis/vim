@@ -22,7 +22,7 @@ map <F3> :noh <CR>
 
 autocmd FileType go map <F5> :!./%< <CR>
 autocmd FileType python map <F5> :!clear<CR>  :!python3 % <CR>
-autocmd FileType cpp map <F8> :!clear<CR> :!g++ -std=c++17 -fsanitize=address -fsanitize=undefined  -Wall -Wextra -O2 -pedantic -Wshadow -Wformat=2 -Wconversion -DLOCAL -g % -o %< <CR>
+autocmd FileType cpp map <F8> :!clear<CR> :!g++ -std=c++17 -Wno-unused-result -fsanitize=address -fsanitize=undefined  -Wall -Wextra -O2 -pedantic -Wshadow -Wformat=2 -Wconversion -DLOCAL -g % -o %< <CR>
 autocmd FileType cpp map <F5> :!./%< <CR>
 
 filetype off                 
